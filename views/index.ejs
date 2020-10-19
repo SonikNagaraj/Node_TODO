@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TODO-App</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="../public/assets/styles.css">
+</head>
+<body>
+    <div class="Main">
+        <!-- Header -->
+        <div class="Header">
+            <H2>
+                Todo-app with Node JS, Express JS and MongoDB
+            </H2>
+        </div>
+        
+        <!-- Input box -->
+        <form class = "new_entry" method="POST" action="/newtodo">
+            <div class="input-group mb-3 input">
+                <input type="text" class="form-control" name="value" placeholder="Enter todo" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-dark" type="submit" id="button-addon2">Submit</button>
+                </div>
+              </div>
+    
+        </form>
+        
+        <!-- List of items -->
+        <div class="items">
+                <% for(var i = 0; i < todolist.length; i++) { %>
+                    <input type="checkbox" name="check">
+                    <label for="check" class="strikethrough"><%=todolist[i].name %></label>
+                        <hr class="dash">
+               <% } %>
+        </div>
+    </div>
+    
+</body>
+</html>
+

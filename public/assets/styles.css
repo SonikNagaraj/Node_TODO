@@ -1,0 +1,34 @@
+body {
+    background-color: cornsilk;
+}
+.Header{
+    background-color: #00334d;
+    text-align: center;
+    color: #f2f2f2;
+}
+
+.input {
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 30px;
+}
+
+.items {
+    color: #00334d;
+    font-size : x-large;
+    border: 2px solid black;
+    background-color: white;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    box-shadow: 9px 7px black;
+}
+
+input[type=checkbox]:checked + label.strikethrough{
+    text-decoration: line-through;
+}
+
+.dash {
+    background-color: #fff; 
+    border-top: 2px dashed #8c8b8b;  
+}
