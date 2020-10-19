@@ -38,11 +38,17 @@
         
         <!-- List of items -->
         <div class="items">
+            <form class="completed" method="post" action="/delete">
                 <% for(var i = 0; i < todolist.length; i++) { %>
-                    <input type="checkbox" name="check">
+
+                    <input type="checkbox" name= "box_<%= i %>">
                     <label for="check" class="strikethrough"><%=todolist[i].name %></label>
                         <hr class="dash">
                <% } %>
+               <div class="button_class">
+                    <button class="btn btn-dark" type="submit" id="button-addon2">Completed</button>
+               </div>
+            </form>
         </div>
     </div>
     

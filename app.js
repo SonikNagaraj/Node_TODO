@@ -48,6 +48,29 @@ app.post('/newtodo', (req, res) => {
     res.redirect('/');
 });
 
+//Delete
+app.post('/delete', (req, res) => {
+    
+    Todo.find({}, (err, todolist) => {
+        if(err)
+            console.log(err);
+        else
+        {
+            for(let i = 0; i < todolist.length; i++){
+                var value = req.body['box_' + i];
+                if(value){
+                    Todo.deleteOne({ name: todolist[i].name }, (err) => {
+                        if (err)
+                            console.log(err);
+                      });
+                }
+            }
+        }
+    });
+    res.redirect('/');
+});
+
+
 app.listen('3000', () => {
     console.log('Listening on port 3000');
 });
