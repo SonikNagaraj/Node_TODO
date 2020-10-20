@@ -3,7 +3,14 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 //Mongoose connection
-mongoose.connect('mongodb://localhost/todo');
+mongoose.connect('mongodb://mongo:27017/todo');
+var db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'Connection Error:'));
+ 
+db.once('open', function() {
+  console.log("Successfully connected to MongoDB!");
+});
 
 //Mongoose schema
 var todoSchema = new mongoose.Schema({
